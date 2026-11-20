@@ -84,7 +84,7 @@ export function buildRequestEmail({ type, page, fields }, { from, to, receivedAt
         <tr>
           <td style="padding:28px 36px 0;">
             <div style="font-size:13px;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">Message</div>
-            <div style="background:#faf7f0;border-left:4px solid #FFCB3D;border-radius:6px;padding:18px 20px;font-size:15px;line-height:1.7;color:#111827;white-space:pre-line;">${escapeHtml(message.value)}</div>
+            <div style="background:#eef5f0;border-left:4px solid #75a987;border-radius:6px;padding:18px 20px;font-size:15px;line-height:1.7;color:#111827;white-space:pre-line;">${escapeHtml(message.value)}</div>
           </td>
         </tr>`
     : ''
@@ -106,13 +106,13 @@ export function buildRequestEmail({ type, page, fields }, { from, to, receivedAt
         <td align="center">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#ffffff;border-radius:12px;overflow:hidden;">
             <tr>
-              <td style="background:#292059;padding:36px 36px 30px;text-align:center;">
-                <div style="font-family:Georgia,'Times New Roman',serif;font-size:12px;letter-spacing:4px;color:#FFCB3D;text-transform:uppercase;">Le Vezo Beach</div>
+              <td style="background:#1f5a3d;padding:36px 36px 30px;text-align:center;">
+                <div style="font-family:Georgia,'Times New Roman',serif;font-size:12px;letter-spacing:4px;color:#c9e6d0;text-transform:uppercase;">La Colongette</div>
                 <div style="font-family:Georgia,'Times New Roman',serif;font-size:24px;color:#ffffff;margin-top:12px;">${escapeHtml(template.title)}</div>
               </td>
             </tr>
             <tr>
-              <td style="height:3px;background:#FFCB3D;line-height:3px;font-size:0;">&nbsp;</td>
+              <td style="height:3px;background:#75a987;line-height:3px;font-size:0;">&nbsp;</td>
             </tr>
             <tr>
               <td style="padding:32px 36px 0;">
@@ -128,7 +128,7 @@ export function buildRequestEmail({ type, page, fields }, { from, to, receivedAt
             </tr>${messageHtml}
             <tr>
               <td align="center" style="padding:32px 36px 12px;">
-                <a href="mailto:${email}" style="display:inline-block;background:#292059;color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:999px;font-size:15px;">Répondre à ${name}</a>
+                <a href="mailto:${email}" style="display:inline-block;background:#1f5a3d;color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:999px;font-size:15px;">Répondre à ${name}</a>
               </td>
             </tr>
             <tr>

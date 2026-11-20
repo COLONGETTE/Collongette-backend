@@ -6,7 +6,7 @@ function startServer({ fail = false } = {}) {
   const sent = []
   const mailer = {
     async sendMail(message) {
-      if (fail) throw new Error('SMTP down')
+      if (fail) throw new Error('Resend unavailable')
       sent.push(message)
     },
   }
@@ -79,6 +79,9 @@ test('valid contact request is sent with visitor as Reply-To', async () => {
     assert.equal(server.sent[0].replyTo, 'jean@example.com')
     assert.equal(server.sent[0].to, 'owner@example.com')
     assert.match(server.sent[0].html, /Bonjour/)
+    assert.match(server.sent[0].html, /La Colongette/)
+    assert.doesNotMatch(server.sent[0].html, /Vezo/)
+    assert.match(server.sent[0].html, /background:#1f5a3d/)
   } finally {
     await server.close()
   }
@@ -176,7 +179,7 @@ test('unknown form type is rejected', async () => {
   }
 })
 
-test('SMTP failure returns 502 so the form does not show success', async () => {
+test('email delivery failure returns 502 so the form does not show success', async () => {
   const server = await startServer({ fail: true })
   try {
     const result = await post(server.url, validContact)

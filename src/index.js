@@ -13,9 +13,13 @@ const corsOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173,http://lo
   .map((origin) => origin.trim())
   .filter(Boolean)
 
+if (process.env.NODE_ENV !== 'production') {
+  corsOrigins.push('http://localhost:3001')
+}
+
 const app = createApp({
   mailer: createResendMailer(process.env.RESEND_API_KEY),
-  mailFrom: `"Le Vezo Beach Morondava" <${process.env.MAIL_FROM}>`,
+  mailFrom: `"La Colongette Antsirabe" <${process.env.MAIL_FROM}>`,
   mailTo: process.env.MAIL_TO,
   corsOrigins,
 })
